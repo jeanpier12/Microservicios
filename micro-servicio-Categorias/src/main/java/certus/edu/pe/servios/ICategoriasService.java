@@ -8,7 +8,7 @@ import org.springframework.data.domain.Pageable;
 import certus.edu.pe.modelo.Categoria;
 
 public interface ICategoriasService {
-	void guardar(Categoria categoria);
+	Categoria guardar(Categoria categoria);
 	void eliminar(Integer idCategoria);
 	List<Categoria> buscarTodas();
 	Categoria buscarPorId(Integer idCategoria);

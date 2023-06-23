@@ -21,8 +21,8 @@ public class CategoriasServiceImp implements ICategoriasService {
 	
 	//medotod para guardar un acategoria
 	@Override
-	public void guardar(Categoria categoria) {
-		categoriasRepo.save(categoria);
+	public Categoria guardar(Categoria categoria) {
+		return categoriasRepo.save(categoria);
 	}
 
 	@Override
