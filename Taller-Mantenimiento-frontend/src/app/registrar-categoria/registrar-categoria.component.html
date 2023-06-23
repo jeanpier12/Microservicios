@@ -1,6 +1,6 @@
-<div class="col-md-6 offset-md-3">
+<!-- <div class="col-md-6 offset-md-3">
   <h3 class="text-center">Resgistro de Categorias</h3>
-  <!-- Este formulario va a llamar a metodo onsubmit -->
+
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="">Nombre:</label>
@@ -10,11 +10,77 @@
 
     <div class="form-group">
       <label for="">Descripcion:</label>
-      <input type="text" class="form-control" id=" descripcion"
-      [(ngModel)]="categoria.descripcion" name=" descripcion">
+      <textarea class="form-control"  rows="2"  class="form-control" id=" descripcion"
+      [(ngModel)]="categoria.descripcion" name=" descripcion"></textarea>
     </div>
 
     <button class="btn btn-success">Guardar</button>
 
   </form>
-</div>
+</div> -->
+
+<main role="main">
+  <hr>
+  <div class="container ">
+
+    <div class="card ">
+      <h4 class="card-header text-center"> <strong> Registro de Categoría</strong></h4>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #categoriaForm="ngForm">
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" [(ngModel)]="categoria.nombre" name="nombre" placeholder="Escriba el nombre de la categoría" required>
+
+
+
+                  <div *ngIf="categoriaForm.controls['nombre'].invalid && (categoriaForm.controls['nombre'].dirty || categoriaForm.controls['nombre'].touched)">
+                    <div *ngIf="categoriaForm.controls['nombre'].errors?.required " class="alert  alert-error">
+                      <div class="alert  alert-danger ">
+                      El nombre es obligatorio
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                   <textarea class="form-control" id="descripcion" [(ngModel)]="categoria.descripcion" name="descripcion" rows="2" required></textarea>
+
+
+
+                  <div *ngIf="categoriaForm.controls['descripcion'].invalid && (categoriaForm.controls['descripcion'].dirty || categoriaForm.controls['descripcion'].touched)">
+                    <div *ngIf="categoriaForm.controls['descripcion'].errors?.required" class="alert  alert-error">
+                      <div class="alert alert-danger ">
+                      La descripción es obligatoria
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+          <hr>
+              <div class="row justify-content-center ">
+                 <div class="col-md-3">
+                  <button type="submit" class="btn btn-success formulario-boton" [disabled]="categoriaForm.invalid">Guardar</button>
+               </div>
+           </div>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</main>
+
