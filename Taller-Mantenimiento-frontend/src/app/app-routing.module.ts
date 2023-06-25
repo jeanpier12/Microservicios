@@ -11,7 +11,7 @@ const routes: Routes = [
   //al compomente asignado =component:ListaEmpleadosComponent
 {path:"Categorias-lista",component:ListaCategoriasComponent},
 //si yo le doy una url por defecto me va a dirigir a empleados
-{path:" ",redirectTo:"Categorias-lista",pathMatch:"full"},
+{path:"",redirectTo:"Categorias-lista",pathMatch:"full"},
 //si estro a esta url se me mostrara el componente =RegistroEmpleadoComponent
 {path:"registrar-categoria",component:RegistrarCategoriaComponent},
 {path : 'actualizar-categoria/:id',component:ActualizarCategoriaComponent}
