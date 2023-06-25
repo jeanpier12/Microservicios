@@ -1,5 +1,5 @@
-
-
+/* fuentes de letra de google */
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Poppins:wght@300;400;500;700&family=Roboto:wght@500&display=swap');
 
 /* Estilo de logo */
 #logo{
@@ -16,6 +16,9 @@
 
 }
 #logo h3{
+  font-family: 'Caprasimo', cursive;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   display: block;
   float: right;
   margin-top:5px;

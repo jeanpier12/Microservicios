@@ -4,9 +4,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -30,6 +33,10 @@ public class CategoriasController {
 	// Inyectamos una instancia desde nuestro ApplicationContext   
     @Autowired
    	private ICategoriasService serviceCategorias;
+    
+    
+    @Value("${spring.application.name}")
+    private String texto;
 	  
     /**
 	 * Metodo que muestra la lista de categorias sin paginacion
@@ -81,4 +88,12 @@ public class CategoriasController {
 		return ResponseEntity.ok(respuesta);
     }
 		
+    @GetMapping("/obtener-config")
+    public ResponseEntity<?> obtenerConfi(@Value("${server.port}") String puerto){
+    	Map<String , String> json =new HashMap<>();
+    	json.put("texto", texto);
+    	json.put("Puerto", puerto);
+    	return new ResponseEntity<Map<String ,String>>(json,HttpStatus.OK);
+    	
+    }
 }
