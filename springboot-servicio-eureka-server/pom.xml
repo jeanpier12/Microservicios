@@ -5,25 +5,27 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.1.1</version>
+		<version>2.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>certus.edu.pe</groupId>
-	<artifactId>spring-boot-servicio-eureka-sever</artifactId>
-	<version>1.0.0</version>
-	<name>spring-boot-servicio-eureka-sever</name>
-	<description>Resgistro y descubrimiento de microservicios</description>
+	<groupId>com.formacionbdi.springboot.app.eureka</groupId>
+	<artifactId>springboot-servicio-eureka-server</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>springboot-servicio-eureka-server</name>
+	<description>Demo project for Spring Boot</description>
+
 	<properties>
-		<java.version>17</java.version>
-		<spring-cloud.version>2022.0.3</spring-cloud.version>
+		<java.version>11</java.version>
+		<spring-cloud.version>2020.0.3</spring-cloud.version>
 	</properties>
+
 	<dependencies>
-	 <!-- Oblicatorio colocar esta dependencia de la vercion jdk 11 en adelante para que funcione eureka -->
-	    <dependency>
+	<!-- Oblicatorio colocar esta dependencia desde la vercion jdk 11 en adelante para que funcione eureka -->
+		<dependency>
 			<groupId>org.glassfish.jaxb</groupId>
 			<artifactId>jaxb-runtime</artifactId>
 		</dependency>
-	
+<!-- Esta dependencia sirve para ser un servidor de eureka -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
@@ -41,6 +43,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
