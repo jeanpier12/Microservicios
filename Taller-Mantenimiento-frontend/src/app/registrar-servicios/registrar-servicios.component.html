@@ -1,0 +1,135 @@
+
+<main role="main">
+  <hr>
+  <div class="container ">
+
+    <div class="card ">
+      <h4 class="card-header text-center"> <strong> Ingrese Nuevo servicio</strong></h4>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #servicioForm="ngForm">
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" [(ngModel)]="servicio.nombre" name="nombre" placeholder="Escriba el nombre del servicio" required>
+
+
+
+                  <div *ngIf="servicioForm.controls['nombre'].invalid && (servicioForm.controls['nombre'].dirty || servicioForm.controls['nombre'].touched)">
+                    <div *ngIf="servicioForm.controls['nombre'].errors?.required " class="alert  alert-error">
+                      <div class="alert  alert-danger ">
+                      El nombre es obligatorio
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                   <textarea class="form-control" id="descripcion" [(ngModel)]="servicio.descripcion" name="descripcion" rows="2" required></textarea>
+
+                  <div *ngIf="servicioForm.controls['descripcion'].invalid && (servicioForm.controls['descripcion'].dirty || servicioForm.controls['descripcion'].touched)">
+                    <div *ngIf="servicioForm.controls['descripcion'].errors?.required" class="alert  alert-error">
+                      <div class="alert alert-danger ">
+                      La descripción es obligatoria
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="fecha">Fecha</label>
+                <input type="date" class="form-control" id="fecha" [(ngModel)]="servicio.fecha" name="fecha" placeholder="Escriba la feca del servicio" required>
+
+                  <div *ngIf="servicioForm.controls['fecha'].invalid && (servicioForm.controls['fecha'].dirty || servicioForm.controls['fecha'].touched)">
+                    <div *ngIf="servicioForm.controls['fecha'].errors?.required" class="alert  alert-error">
+                      <div class="alert alert-danger ">
+                      La descripción es obligatoria
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="salario">Precio</label>
+                   <input type="nunber" pattern="[0-9]+" class="form-control" placeholder=""id="salario" [(ngModel)]="servicio.salario" name="salario" rows="2" required>
+
+                  <div *ngIf="servicioForm.controls['salario'].invalid && (servicioForm.controls['salario'].dirty || servicioForm.controls['salario'].touched)">
+                    <div *ngIf="servicioForm.controls['salario'].errors?.required" class="alert  alert-error">
+                      <div class="alert alert-danger ">
+                      El monnto del precio del servicio es obligatorio
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="estatus">Estatus</label>
+                <select [(ngModel)]="servicio.estatus" id="estatus" name="estatus" class="form-control">
+                  <option value="Creada">Creada</option>
+                  <option value="Aprobada">Aprobada</option>
+                  <option value="Eliminada">Eliminada</option>
+                </select>
+                <div *ngIf="servicioForm.controls['estatus'].invalid && (servicioForm.controls['estatus'].dirty || servicioForm.controls['estatus'].touched)">
+                  <div *ngIf="servicioForm.controls['estatus'].errors?.required" class="alert alert-error">
+                    <div class="alert alert-danger">
+                      El estado es obligatorio
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="detalles">Detalle del servicio</label>
+                   <textarea class="form-control" id="detalles" [(ngModel)]="servicio.detalles" name="detalles" rows="2" required></textarea>
+
+                  <div *ngIf="servicioForm.controls['detalles'].invalid && (servicioForm.controls['descripcion'].dirty || servicioForm.controls['detalles'].touched)">
+                    <div *ngIf="servicioForm.controls['detalles'].errors?.required" class="alert  alert-error">
+                      <div class="alert alert-danger ">
+                      El detalle del servicio es obligatorio
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <hr>
+              <div class="row justify-content-center ">
+                 <div class="col-md-3">
+                  <button type="submit" class="btn btn-success formulario-boton" [disabled]="servicioForm.invalid">Guardar</button>
+               </div>
+           </div>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+</main>
+

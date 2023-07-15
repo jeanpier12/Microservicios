@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./actualizar-categoria.component.css']
 })
 export class ActualizarCategoriaComponent implements OnInit {
-
+//ES HTNL VA A PODER UTILIZAR ESTA PROPIEDADES
   id:number;
   categoria:Categoria = new Categoria();
   constructor(private categoriaService:CategoriaService,private router:Router,private route:ActivatedRoute) { }

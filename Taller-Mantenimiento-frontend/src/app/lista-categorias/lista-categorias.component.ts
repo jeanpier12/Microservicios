@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ListaCategoriasComponent implements OnInit {
   [x: string]: any;
-
+//se comunica con la en index
   categorias:Categoria[];
 
 

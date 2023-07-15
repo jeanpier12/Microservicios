@@ -1,14 +1,12 @@
-
-
 <main role="main">
   <hr>
   <div class="container">
 
     <div class="card">
-      <h4 class="card-header"><strong>Listado de Categorías</strong></h4>
+      <h4 class="card-header"><strong>Listado de Servicios</strong></h4>
       <div class="card-body">
         <!-- el routerlink solo llama a las rutas del componente router  y cambia sus url-->
-        <a routerLink="/registrar-categoria" routerLinkActive="active" class="nav-link" class="btn btn-info"  role="button"><i class="fas fa-file" aria-hidden="true"></i> Nueva</a>
+        <a routerLink="/registrar-Servicios" routerLinkActive="active" class="nav-link" class="btn btn-info"  role="button"><i class="fas fa-file" aria-hidden="true"></i> Nueva</a>
         <hr>
         <table class="table table-hover">
           <thead class=" table-dark">
@@ -16,19 +14,24 @@
               <th scope="col">Id</th>
               <th scope="col">Nombre</th>
               <th scope="col">Descripción</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Salario</th>
+              <th scope="col">estatus</th>
               <th scope="col">Operaciones</th>
             </tr>
           </thead>
           <tbody>
-
-            <tr *ngFor="let categoria of categorias">
-              <td>{{categoria.id}}</td>
-              <td>{{categoria.nombre}}</td>
-              <td>{{categoria.descripcion}}</td>
+            <tr *ngFor="let servi of ser">
+              <td>{{servi.id}}</td>
+              <td>{{servi.nombre}}</td>
+              <td>{{servi.descripcion}}</td>
+              <td>{{servi.fecha}}</td>
+              <td>{{servi.salario}}</td>
+              <td>{{servi.estatus}}</td>
 
               <td>
-                 <button (click)= "actualizarCategoria(categoria.id)" class="btn btn-info"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button>
-                <button (click)= "eliminarCategoria(categoria.id)" class="btn btn-danger" ><i class="fas fa-trash" aria-hidden="true"></i></button>
+                 <button (click)= "actualizarServicio(servi.id)" class="btn btn-info"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button>
+                <button (click)= "eliminarServicio(servi.id)" class="btn btn-danger" ><i class="fas fa-trash" aria-hidden="true"></i></button>
               </td>
             </tr>
 
